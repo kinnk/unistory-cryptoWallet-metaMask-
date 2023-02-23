@@ -4,23 +4,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { metaConnect } from './../../redux/reducers/userSlices';
 
 const Nav = () => {
-  const [address, setAddress] = useState('')
   const dispatch = useDispatch();
-  let addr = useSelector(state => state.user.user); 
-  
+  let addr = useSelector(state => state.user); 
+
   const handleClick = () => {
     dispatch(metaConnect());
-    if(addr !== '') setAddress(addr.address);
   }
-
   return (
     <div className='nav'>
       <div className="nav__container">
         <div className='nav__logo'>LOGO</div>
         <div>
           {
-            address !== '' ? 
-            <span className='nav__account'>{address}</span> :
+            addr.status === 'loading' ? <span className='nav__account'>{'Wait a second'}</span> :
+            addr.status === 'Error' ? <span className='nav__account'>{'MetaMask Error, please check and try again'}</span> :
+            addr.status === 'loaded' ? <span className='nav__account'>{addr.user.address}</span> :
             <Button onClick={handleClick}>Connect metamask</Button>
           }
         </div>

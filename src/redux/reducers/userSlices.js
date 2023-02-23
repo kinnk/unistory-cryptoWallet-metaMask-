@@ -31,8 +31,9 @@ const userData = createSlice({
       state.status = 'loaded';
       state.user = {address: action.payload};
     })
-    builder.addCase(metaConnect.rejected, state => {
+    builder.addCase(metaConnect.rejected, (state, action) => {
       state.status = 'Error';
+      console.log(action.payload)
     })
   }
 })
