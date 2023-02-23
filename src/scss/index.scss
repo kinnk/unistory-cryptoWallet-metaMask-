@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import 'reset';
+body{
+  background: #171719;
+  font-family: 'Bebas Neue', cursive;
+}
+.container{
+  max-width: 1310px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+@import 'home';
+@import 'nav';
+
+@import 'metaMask';
+@import 'button';
+@import 'item';

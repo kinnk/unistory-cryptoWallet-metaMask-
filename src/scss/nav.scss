@@ -1,0 +1,29 @@
+.nav{
+  padding: 14px 0;
+  &__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo{
+    padding: 12px 86px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #5A5A5A;
+    border: 1px dotted #c7c7c7;
+  }
+  &__btn{
+    padding: 10px 24px;
+    border: none;
+    border-radius: 30px;
+    background: #E75626;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  &__account{
+    color: #E75626;
+  }
+}

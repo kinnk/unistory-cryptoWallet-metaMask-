@@ -1,0 +1,14 @@
+.item{
+  display: flex;
+  column-gap: 30px;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 15px;
+  &__element{
+    display: flex;
+    color:#ffffff;
+  }
+  &__username{
+    
+  }
+}

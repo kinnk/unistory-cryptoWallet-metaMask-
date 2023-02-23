@@ -1,0 +1,128 @@
+.home{
+  &__header{
+    margin-bottom: 67px;
+    padding-top: 16%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+  &__title{
+    position: relative;
+    &-str{
+      font-size: 120px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 144px;
+      & > span{
+        color: transparent;
+        -webkit-text-stroke: 0.1px #ffffff;
+      }
+    }
+    &-right{
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 70px;
+      margin-bottom: 42px;
+    }
+  }
+  &__detail{
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #D2C4C4;
+    & > span{
+      font-size: 28px;
+      font-weight: 700;
+      color: #E75626;
+      margin-bottom: 12px;
+    }
+    & > p {
+      padding-bottom: 8px;
+      font-weight: 400;
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 21px;
+    }
+  }
+  &__textBox{
+    max-width: 421px;
+  }
+  &__textContent{
+    font-size: 16px;
+    color: #ffffff;
+  }
+  &__picture{
+    position: absolute;
+    background: url('../assets/planet.png');
+    width: 320px;
+    height: 320px;
+    left: 655px;
+    top: -20px;
+    z-index: -1;
+    &::after{
+      content: '';
+      width: 500px;
+      height: 500px;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+
+  &__section{
+    min-height: 700px;
+    padding-top: 48px;
+    display: flex;
+    column-gap: 136px;
+    &__left{
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+      &-text{
+        margin-bottom: 36px;
+        & > h4 {
+          margin-bottom: 18px;
+          font-weight: 700;
+          font-size: 36px;
+          color: #E75626;
+        }
+        & > p {
+          font-weight: 400;
+          font-size: 16px;
+          color: #ffffff;
+        }  
+      }
+      &__form{
+        &-label{
+          margin-bottom: 8px;
+          color: #ffffff;
+        }
+        &-input{
+          margin-bottom: 18px;
+          padding: 12px 18px;
+          border: 1px solid #ffffff;
+          border-radius: 50px;
+          background: transparent;
+          width: 100%;
+          outline: none;
+          color: #ffffff;
+        }
+      }
+    }
+    &__right{
+      & > h4 {
+        font-weight: 700;
+        font-size: 36px;
+        color: #ffffff;
+      }
+    }
+  }
+
+
+}

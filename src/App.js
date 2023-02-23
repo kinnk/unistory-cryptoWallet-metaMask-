@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+
+import MetaMask from "./components/metaMask/MetaMask";
+import { useState, useEffect } from 'react';
+import { Route, Routes } from "react-router";
+import Home from "./pages/Home";
+import Nav from "./layout/header/nav";
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(Boolean);
+  const { ethereum } = window;
+
+  useEffect(()=>{
+    setModalOpen(!Boolean(ethereum && ethereum.isMetaMask));
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />}>
+          </Route>
+        </Routes>
+      </div>
+        { modalOpen && <MetaMask modalOpen={modalOpen} setModalOpen={setModalOpen}/>}
     </div>
   );
 }
